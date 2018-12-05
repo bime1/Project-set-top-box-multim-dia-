@@ -51,13 +51,13 @@ int main(int argc, const char* argv[])
     f->setNameFile("My first video");
     f->setPath("/Desktop");
 
-//    Film newFilm = f ;
+    Film * newFilm = new Film(*f);
 
-//    newFilm->show(cout);
-//    int newtableChapite[5] = {6,7,8,9,10};
-//    f->setTableau(newtableChapite, 5);
-//    cout << "Après modification de film " << endl;
-//    newFilm->show(cout);
+    newFilm->show(cout);
+    int newtableChapite[5] = {6,7,8,9,10};
+    f->setTableau(newtableChapite, 5);
+    cout << "Après modification de film " << endl;
+    newFilm->show(cout);
 
 
 
