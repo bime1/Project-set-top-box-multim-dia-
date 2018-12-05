@@ -8,39 +8,43 @@ using namespace std;
 class Groupe
 {
 private:
-    list < multimedia> * liste ;
+    list < multimedia > * liste ;
     string nameListe;
 public:
-    Groupe() {
-        nameListe = "None";
+    Groupe(string _name) {
+        nameListe = _name;
         liste = new list<multimedia>() ;
     }
 
-    string getNameListe() const {
-        return nameListe;
-    }
+//    string getNameListe() const {
+//        return nameListe;
+//    }
 
-    virtual ~Groupe(){
-        delete liste;
-    }
-    void show(ostream & s) const
+//    virtual ~Groupe(){
+//        delete liste;
+//    }
+//    void show(ostream & s) const
+//    {
+//        for(auto const& it : *liste )
+//        {
+//            it.show(s);
+//        }
+//    }
+
+//    void addBack(multimedia & mlt){
+//        liste->push_back(mlt);
+//    }
+//    void addFront(multimedia & mlt){
+//        liste->push_front(mlt);
+//    }
+
+//    void removeFromListe(multimedia & mlt)
+//    {
+//        liste->remove(mlt);
+//    }
+    virtual void  jouer(void) const
     {
-        for(auto const& it : *liste )
-        {
-            it.show(s);
-        }
-    }
-
-    void addBack(multimedia & mlt){
-        liste->push_back(mlt);
-    }
-    void addFront(multimedia & mlt){
-        liste->push_front(mlt);
-    }
-
-    void removeFromListe(multimedia & mlt)
-    {
-        liste->remove(mlt);
+        cout << "Je suis un groupe " << endl;
     }
 };
 #endif // GROUPE_H

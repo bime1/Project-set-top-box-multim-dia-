@@ -66,7 +66,7 @@ int main(int argc, const char* argv[])
 
     /*test de la class groupe   */
 
-    Groupe * g1 = new Groupe();
+    //Groupe * g1 = new Groupe("Mygroupe");
 
 
 
