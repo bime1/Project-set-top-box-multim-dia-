@@ -2,13 +2,15 @@
 // main.cpp
 // Created on 21/10/2018
 //
-
+#include <list>
+#include <iterator>
 #include <iostream>
 #include <string>
 #include "multimedia.h"
 #include "photo.h"
 #include "video.h"
 #include <vector>
+#include "groupe.h"
 #include "film.h"
 
 using namespace std;
@@ -43,6 +45,8 @@ int main(int argc, const char* argv[])
     }
     */
 
+    /* tests de la class film */
+    /*
     Film * f = new Film();
     int _tableChapite[5] = {1,2,3,4,5};
     f->setTableau(_tableChapite , 5);
@@ -58,6 +62,11 @@ int main(int argc, const char* argv[])
     f->setTableau(newtableChapite, 5);
     cout << "Après modification de film " << endl;
     newFilm->show(cout);
+    */
+
+    /*test de la class groupe   */
+
+    Groupe * g1 = new Groupe();
 
 
 

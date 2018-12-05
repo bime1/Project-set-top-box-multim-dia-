@@ -20,7 +20,9 @@ public:
         return nameListe;
     }
 
-    virtual ~Groupe();
+    virtual ~Groupe(){
+        delete liste;
+    }
     void show(ostream & s) const
     {
         for(auto const& it : *liste )
