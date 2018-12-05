@@ -1,0 +1,45 @@
+#ifndef VIDEO_H
+#define VIDEO_H
+#include "multimedia.h"
+#include <iostream>
+#include <string>
+#include <stdlib.h>
+using namespace std;
+
+
+class Video : public multimedia
+{
+
+
+private:
+    double duree;
+public:
+    Video() {duree = 0;}
+    Video(double _duree, string _path, string _fileName): multimedia (_path, _fileName){
+        duree = _duree;
+    }
+    void setDuree(double _duree) {duree = _duree;}
+    double getDuree(void) const {return duree;}
+    void show(ostream & s) const { s << getDuree()<< endl;}
+
+    virtual void jouer(void) const
+    {
+        //string pathComplet = getPath() + "/"+ getNameFile();
+        //string commande = "mpv " + pathComplet + " &";
+        //system(commande.c_str());
+        cout << "Je suis une video" << endl;
+
+    }
+
+
+};
+
+
+
+
+
+
+
+
+
+#endif // VIDEO_H

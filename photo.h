@@ -1,0 +1,43 @@
+#ifndef PHOTO_H
+#define PHOTO_H
+#include "multimedia.h"
+#include <iostream>
+#include <string>
+#include <stdlib.h>
+
+using namespace std;
+
+
+class Photo : public multimedia
+{
+
+private:
+    double latitude;
+    double longitude;
+public:
+    Photo() {latitude = 0; longitude = 0;}
+    Photo(double _latitude, double _longitude, string _path, string _filename):multimedia (_path,_filename) {
+        latitude = _latitude;
+        longitude = _longitude;
+    }
+    void setLatitude(double _latitude)  {latitude = _latitude;}
+    void setLongitude(double _longitude) {longitude = _longitude;}
+    double getLatitude(void) const {return latitude;}
+    double getLongitude(void) const {return longitude;}
+    void show(ostream& s) const { s << getLatitude() << getLongitude() << endl;}
+
+    virtual void jouer(void) const
+    {
+        //string pathComplet = getPath() + "/"+ getNameFile();
+        //string commande = "image " + pathComplet + " &";
+        //system(commande.c_str());
+        cout << "Je suis une photo" << endl;
+
+    }
+
+};
+
+
+
+
+#endif // PHOTO_H
