@@ -8,10 +8,18 @@ class Groupe : public multimedia
 {
 
 private:
-    list < T > liste ;
+    list < T > * liste ;
     string nameListe;
 public:
-    Groupe() {}
+    Groupe() {
+        nameListe = "None";
+        liste = nullptr;
+    }
+
+    string getNameListe(void) const {
+        return nameListe;
+    }
+
     virtual ~Groupe();
     void show(ostream & s) const;
 };
