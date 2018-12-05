@@ -3,24 +3,42 @@
 #include "multimedia.h"
 #include <list>
 #include <iterator>
-template<typename T>
-class Groupe : public multimedia
-{
+using namespace std;
 
+class Groupe
+{
 private:
-    list < T > * liste ;
+    list < multimedia> * liste ;
     string nameListe;
 public:
     Groupe() {
         nameListe = "None";
-        liste = nullptr;
+        liste = new list<multimedia>() ;
     }
 
-    string getNameListe(void) const {
+    string getNameListe() const {
         return nameListe;
     }
 
     virtual ~Groupe();
-    void show(ostream & s) const;
+    void show(ostream & s) const
+    {
+        for(auto const& it : *liste )
+        {
+            it.show(s);
+        }
+    }
+
+    void addBack(multimedia & mlt){
+        liste->push_back(mlt);
+    }
+    void addFront(multimedia & mlt){
+        liste->push_front(mlt);
+    }
+
+    void removeFromListe(multimedia & mlt)
+    {
+        liste->remove(mlt);
+    }
 };
 #endif // GROUPE_H
