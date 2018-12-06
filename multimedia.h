@@ -14,7 +14,7 @@ public:
     multimedia();
     multimedia(string _path,string _nameFile);
     virtual ~multimedia();
-    virtual void jouer(void) const = 0;
+    virtual void jouer() const = 0;
     string getPath() const ;
     string getNameFile() const;
     void setPath(string _path) ;

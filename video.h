@@ -19,10 +19,10 @@ public:
         duree = _duree;
     }
     void setDuree(double _duree) {duree = _duree;}
-    double getDuree(void) const {return duree;}
+    double getDuree() const {return duree;}
     void show(ostream & s) const { s << getDuree()<< endl;}
 
-    virtual void jouer(void) const
+    void jouer() const override
     {
         //string pathComplet = getPath() + "/"+ getNameFile();
         //string commande = "mpv " + pathComplet + " &";

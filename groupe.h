@@ -16,20 +16,20 @@ public:
         liste = new list<multimedia>() ;
     }
 
-//    string getNameListe() const {
-//        return nameListe;
-//    }
+    string getNameListe() const {
+        return nameListe;
+    }
 
-//    virtual ~Groupe(){
-//        delete liste;
-//    }
-//    void show(ostream & s) const
-//    {
-//        for(auto const& it : *liste )
-//        {
-//            it.show(s);
-//        }
-//    }
+    virtual ~Groupe(){
+        delete liste;
+    }
+    void show(ostream & s) const
+    {
+        for(auto const& it : *liste )
+        {
+            it.show(s);
+        }
+    }
 
 //    void addBack(multimedia & mlt){
 //        liste->push_back(mlt);
@@ -42,9 +42,5 @@ public:
 //    {
 //        liste->remove(mlt);
 //    }
-    virtual void  jouer(void) const
-    {
-        cout << "Je suis un groupe " << endl;
-    }
 };
 #endif // GROUPE_H

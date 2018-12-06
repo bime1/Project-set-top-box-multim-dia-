@@ -33,7 +33,7 @@ public:
         }
         tableau = newArray;
     }
-    int getNombreChapitre(void) const {return  nombreChapitres;}
+    int getNombreChapitre() const {return  nombreChapitres;}
     int getTableauChapitre(int numChapitre) const {return tableau[numChapitre];}
     void show(ostream& s) const
     {

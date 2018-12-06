@@ -22,11 +22,11 @@ public:
     }
     void setLatitude(double _latitude)  {latitude = _latitude;}
     void setLongitude(double _longitude) {longitude = _longitude;}
-    double getLatitude(void) const {return latitude;}
-    double getLongitude(void) const {return longitude;}
+    double getLatitude() const {return latitude;}
+    double getLongitude() const {return longitude;}
     void show(ostream& s) const { s << getLatitude() << getLongitude() << endl;}
 
-    virtual void jouer(void) const
+    void jouer() const override
     {
         //string pathComplet = getPath() + "/"+ getNameFile();
         //string commande = "image " + pathComplet + " &";
