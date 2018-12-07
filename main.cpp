@@ -66,9 +66,45 @@ int main(int argc, const char* argv[])
 
     /*test de la class groupe   */
 
-    Groupe * g1 = new Groupe("Mygroupe");
-    cout << g1->getNameListe() << endl;
+    Groupe * g1 = new Groupe("Mygroupe1");
 
+    Photo * image = new Photo();
+    image->setLatitude(17);
+    image->setLongitude(17);
+    image->setNameFile("Mon Image");
+
+    Video * v = new Video();
+    v->setDuree(18);
+    v->setNameFile("Ma vidéo");
+
+    Film * f1 = new Film();
+    f1->setNameFile("My Film");
+    int tableDureef1[5] = {1,2,3,4,5};
+    f1->setTableau(tableDureef1,5);
+
+    g1->addFront(image);
+    g1->addBack(v);
+    g1->addBack(f1);
+
+
+    g1->show(cout);
+
+
+
+    Groupe * g2 = new Groupe("Mygroupe2");
+
+    Photo * image2 = new Photo();
+    image2->setLatitude(20);
+    image2->setLongitude(20);
+    image2->setNameFile("Mon Image 2");
+
+    g2->addFront(image2);
+    g2->addBack(image);
+    g2->addBack(v);
+    g2->addBack(f1);
+
+
+    g2->show(cout);
 
 
     return 0;

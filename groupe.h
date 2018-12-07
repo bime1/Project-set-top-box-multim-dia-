@@ -3,6 +3,7 @@
 #include "multimedia.h"
 #include <list>
 #include <iterator>
+#include <memory>
 using namespace std;
 
 class Groupe
