@@ -67,7 +67,7 @@ int main(int argc, const char* argv[])
     /*test de la class groupe   */
 
     Groupe * g1 = new Groupe("Mygroupe");
-
+    cout << g1->getNameListe() << endl;
 
 
 

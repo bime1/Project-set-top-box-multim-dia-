@@ -8,12 +8,12 @@ using namespace std;
 class Groupe
 {
 private:
-    list < multimedia > * liste ;
+    list < multimedia * > * liste ;
     string nameListe;
 public:
     Groupe(string _name) {
         nameListe = _name;
-        liste = new list<multimedia>() ;
+        liste = new list<multimedia *>() ;
     }
 
     string getNameListe() const {
@@ -27,20 +27,20 @@ public:
     {
         for(auto const& it : *liste )
         {
-            it.show(s);
+            it->show(s);
         }
     }
 
-//    void addBack(multimedia & mlt){
-//        liste->push_back(mlt);
-//    }
-//    void addFront(multimedia & mlt){
-//        liste->push_front(mlt);
-//    }
+    void addBack(multimedia * & mlt){
+        liste->push_back( mlt);
+    }
+    void addFront(multimedia * & mlt){
+        liste->push_front(mlt);
+    }
 
-//    void removeFromListe(multimedia & mlt)
-//    {
-//        liste->remove(mlt);
-//    }
+    void removeFromListe(multimedia * & mlt)
+    {
+        liste->remove(mlt);
+    }
 };
 #endif // GROUPE_H
