@@ -35,7 +35,7 @@ public:
     }
     int getNombreChapitre() const {return  nombreChapitres;}
     int getTableauChapitre(int numChapitre) const {return tableau[numChapitre];}
-    void show(ostream& s) const
+    void show(ostream& s) const override
     {
         s << "Le nombre de chapitres est : " <<getNombreChapitre() << endl;
         for(int i = 0; i < nombreChapitres; i++)

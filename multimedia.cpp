@@ -22,9 +22,9 @@ void multimedia::setNameFile(string _nameFile){nameFile = _nameFile;}
 
 string multimedia::getNameFile() const {return nameFile;}
 string multimedia::getPath() const {return path;}
-void multimedia::show(ostream& s) const {s << "The path is : " <<
-                                              getPath() <<
-                                           ", And the name of the file is : "
-                                             << getNameFile() << endl;}
+//void multimedia::show(ostream& s) const {s << "The path is : " <<
+//                                              getPath() <<
+//                                           ", And the name of the file is : "
+//                                             << getNameFile() << endl;}
 
 

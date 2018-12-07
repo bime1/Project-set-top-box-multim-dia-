@@ -19,7 +19,7 @@ public:
     string getNameFile() const;
     void setPath(string _path) ;
     void setNameFile(string _nameFile);
-    void show(ostream& s) const ;
+    virtual void show(ostream& s) const = 0;
 
 
 };

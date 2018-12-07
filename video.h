@@ -20,7 +20,7 @@ public:
     }
     void setDuree(double _duree) {duree = _duree;}
     double getDuree() const {return duree;}
-    void show(ostream & s) const { s << getDuree()<< endl;}
+    void show(ostream & s) const override { s << getDuree()<< endl;}
 
     void jouer() const override
     {

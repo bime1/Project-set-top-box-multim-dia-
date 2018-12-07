@@ -31,10 +31,10 @@ public:
         }
     }
 
-    void addBack(multimedia * & mlt){
+    void addBack(multimedia * mlt){
         liste->push_back( mlt);
     }
-    void addFront(multimedia * & mlt){
+    void addFront(multimedia * mlt){
         liste->push_front(mlt);
     }
 

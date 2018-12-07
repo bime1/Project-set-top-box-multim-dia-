@@ -24,7 +24,7 @@ public:
     void setLongitude(double _longitude) {longitude = _longitude;}
     double getLatitude() const {return latitude;}
     double getLongitude() const {return longitude;}
-    void show(ostream& s) const { s << getLatitude() << getLongitude() << endl;}
+    void show(ostream& s) const override { s << getLatitude() << getLongitude() << endl;}
 
     void jouer() const override
     {
