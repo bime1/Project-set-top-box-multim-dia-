@@ -5,7 +5,7 @@
 #include <iterator>
 #include <memory>
 using namespace std;
-
+using PtrSmart = std::shared_ptr<multimedia>;
 
 
 
@@ -43,16 +43,16 @@ public:
 //        liste->push_back( mlt);
 //    }
 
-    void addBack(shared_ptr<multimedia> mlt){
+    void addBack(PtrSmart mlt){
         liste->push_back( mlt);
     }
 
 
-    void addFront(shared_ptr<multimedia> mlt){
+    void addFront(PtrSmart mlt){
         liste->push_front(mlt);
     }
 
-    void removeFromListe(shared_ptr<multimedia> mlt)
+    void removeFromListe(PtrSmart mlt)
     {
         liste->remove(mlt);
     }
