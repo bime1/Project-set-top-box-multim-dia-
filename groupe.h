@@ -6,15 +6,21 @@
 #include <memory>
 using namespace std;
 
+
+
+
 class Groupe
 {
 private:
-    list < multimedia * > * liste ;
+    //list < multimedia * > * liste ;
+    list <shared_ptr<multimedia>> *liste;
+
     string nameListe;
 public:
     Groupe(string _name) {
         nameListe = _name;
-        liste = new list<multimedia *>() ;
+        //liste = new list<multimedia *>() ;
+
     }
 
     string getNameListe() const {
@@ -32,14 +38,21 @@ public:
         }
     }
 
-    void addBack(multimedia * mlt){
+    /* Avant l'utilisation des smart pointer  */
+//    void addBack(multimedia * mlt){
+//        liste->push_back( mlt);
+//    }
+
+    void addBack(shared_ptr<multimedia> mlt){
         liste->push_back( mlt);
     }
-    void addFront(multimedia * mlt){
+
+
+    void addFront(shared_ptr<multimedia> mlt){
         liste->push_front(mlt);
     }
 
-    void removeFromListe(multimedia * & mlt)
+    void removeFromListe(shared_ptr<multimedia> mlt)
     {
         liste->remove(mlt);
     }
