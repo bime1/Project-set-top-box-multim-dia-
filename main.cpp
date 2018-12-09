@@ -129,31 +129,37 @@ int main(int argc, const char* argv[])
     int tableDureefSmart[5] = {1,2,3,4,5};
     FilmSmart->setTableau(tableDureefSmart,5);
 
+    /*Les élèments du gourpe 1*/
+
     groupeSmart->addFront(ImageSmart);
     groupeSmart->addBack(VideosSmart);
-    groupeSmart->addBack(FilmSmart);
+    //groupeSmart->addBack(FilmSmart);
 
 
-    shared_ptr<Groupe> groupeSmart2(new Groupe("MysecondeSmartGroupe"));
+//    shared_ptr<Groupe> groupeSmart2(new Groupe("MysecondeSmartGroupe"));
 
-    shared_ptr<Photo> ImageSmart2(new Photo());
-    ImageSmart2->setLatitude(16);
-    ImageSmart2->setLongitude(16);
-    ImageSmart2->setNameFile("Mon Smart Image numéro 2");
+//    shared_ptr<Photo> ImageSmart2(new Photo());
+//    ImageSmart2->setLatitude(16);
+//    ImageSmart2->setLongitude(16);
+//    ImageSmart2->setNameFile("Mon Smart Image numéro 2");
 
-    groupeSmart2->addFront(ImageSmart2);
-    groupeSmart2->addBack(VideosSmart);
-    groupeSmart2->addBack(FilmSmart);
+    /*Les élèments du gourpe 2*/
+
+//    groupeSmart2->addFront(ImageSmart2);
+//    groupeSmart2->addBack(VideosSmart);
+//    groupeSmart2->addBack(FilmSmart);
 
     cout << "Le premier Groupe " << endl;
     groupeSmart->show(cout);
-    cout << "Le second groupe " << endl;
-    groupeSmart2->show(cout);
+    //cout << "Le second groupe " << endl;
+    //groupeSmart2->show(cout);
 
+    cout << "Suppression des élèments" << endl;
 
+    ImageSmart.reset();
 
-
-
+    cout << "Après suppression :" << endl;
+    groupeSmart->show(cout);
 
     return 0;
 }

@@ -14,6 +14,7 @@ class Video : public multimedia
 private:
     double duree;
 public:
+    //virtual ~Video() override {}
     Video() {duree = 0;}
     Video(double _duree, string _path, string _fileName): multimedia (_path, _fileName){
         duree = _duree;

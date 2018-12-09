@@ -13,7 +13,7 @@ private:
 public:
     multimedia();
     multimedia(string _path,string _nameFile);
-    virtual ~multimedia();
+    virtual ~multimedia() = 0;
     virtual void jouer() const = 0;
     string getPath() const ;
     string getNameFile() const;

@@ -23,7 +23,7 @@ public:
         }
     }
 
-    virtual ~Film() {delete []tableau;}
+    virtual ~Film() override {delete []tableau;}
     void setTableau(int _tableau[], int _nombreChapitre)
     {
         nombreChapitres = _nombreChapitre;
