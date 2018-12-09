@@ -12,14 +12,24 @@ using PtrSmart = std::shared_ptr<multimedia>;
 class Groupe
 {
 private:
+    /* Avant l'utilisation des smarts pointeurs */
     //list < multimedia * > * liste ;
+
+    /* Après l'utilisation des smarts pointeurs */
+
     list <shared_ptr<multimedia>> *liste;
 
     string nameListe;
 public:
     Groupe(string _name) {
         nameListe = _name;
+        /*Avnt l'utilisation des smarts pointeurs */
         //liste = new list<multimedia *>() ;
+
+        /* Après l'utilisation des smarts pointeurs*/
+
+
+
 
     }
 
@@ -38,7 +48,8 @@ public:
         }
     }
 
-    /* Avant l'utilisation des smart pointer  */
+    /* Avant l'utilisation des smart pointeurs  */
+
 //    void addBack(multimedia * mlt){
 //        liste->push_back( mlt);
 //    }

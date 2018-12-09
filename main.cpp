@@ -12,7 +12,9 @@
 #include <vector>
 #include "groupe.h"
 #include "film.h"
+#include <memory>
 
+using PtrSmart = std::shared_ptr<multimedia>;
 using namespace std;
 
 int main(int argc, const char* argv[])
@@ -64,8 +66,9 @@ int main(int argc, const char* argv[])
     newFilm->show(cout);
     */
 
-    /*test de la class groupe   */
+    /*test de la class groupe sans utilisation des smarts pointeurs   */
 
+    /*
     Groupe * g1 = new Groupe("Mygroupe1");
 
     Photo * image = new Photo();
@@ -105,6 +108,35 @@ int main(int argc, const char* argv[])
 
 
     g2->show(cout);
+    */
+
+
+    /* Tests avec utilisation des smarts pointeurs */
+
+    shared_ptr<Groupe> groupeSmart(new Groupe("MySmartGroupe"));
+
+    shared_ptr<Photo> ImageSmart(new Photo());
+    ImageSmart->setLatitude(17);
+    ImageSmart->setLongitude(17);
+    ImageSmart->setNameFile("Mon Smart Image");
+
+//    shared_ptr<Video> VideosSmart(new Video());
+//    VideosSmart->setDuree(18);
+//    VideosSmart->setNameFile("Ma Smart vidéo");
+
+//    shared_ptr<Film> FilmSmart(new Film());
+//    FilmSmart->setNameFile("My Film");
+//    int tableDureefSmart[5] = {1,2,3,4,5};
+//    FilmSmart->setTableau(tableDureefSmart,5);
+
+    groupeSmart->addFront(ImageSmart);
+
+    //    groupeSmart->addBack(VideosSmart);
+//    groupeSmart->addBack(FilmSmart);
+
+    //groupeSmart->show(cout);
+    ImageSmart->show(cout);
+
 
 
     return 0;
