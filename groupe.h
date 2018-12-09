@@ -30,9 +30,6 @@ public:
 
         liste = new list <shared_ptr<multimedia>>();
 
-
-
-
     }
 
     string getNameListe() const {
