@@ -28,6 +28,8 @@ public:
 
         /* Après l'utilisation des smarts pointeurs*/
 
+        liste = new list <shared_ptr<multimedia>>();
+
 
 
 

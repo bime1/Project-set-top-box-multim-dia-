@@ -120,22 +120,21 @@ int main(int argc, const char* argv[])
     ImageSmart->setLongitude(17);
     ImageSmart->setNameFile("Mon Smart Image");
 
-//    shared_ptr<Video> VideosSmart(new Video());
-//    VideosSmart->setDuree(18);
-//    VideosSmart->setNameFile("Ma Smart vidéo");
+    shared_ptr<Video> VideosSmart(new Video());
+    VideosSmart->setDuree(18);
+    VideosSmart->setNameFile("Ma Smart vidéo");
 
-//    shared_ptr<Film> FilmSmart(new Film());
-//    FilmSmart->setNameFile("My Film");
-//    int tableDureefSmart[5] = {1,2,3,4,5};
-//    FilmSmart->setTableau(tableDureefSmart,5);
+    shared_ptr<Film> FilmSmart(new Film());
+    FilmSmart->setNameFile("My Film");
+    int tableDureefSmart[5] = {1,2,3,4,5};
+    FilmSmart->setTableau(tableDureefSmart,5);
 
     groupeSmart->addFront(ImageSmart);
+    groupeSmart->addBack(VideosSmart);
+    groupeSmart->addBack(FilmSmart);
 
-    //    groupeSmart->addBack(VideosSmart);
-//    groupeSmart->addBack(FilmSmart);
+    groupeSmart->show(cout);
 
-    //groupeSmart->show(cout);
-    ImageSmart->show(cout);
 
 
 
