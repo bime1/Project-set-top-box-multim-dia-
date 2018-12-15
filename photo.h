@@ -15,7 +15,7 @@ private:
     double latitude;
     double longitude;
 public:
-    //virtual ~Photo() override {}
+    ~Photo() override{}
     Photo() {latitude = 0; longitude = 0;}
     Photo(double _latitude, double _longitude, string _path, string _filename):multimedia (_path,_filename) {
         latitude = _latitude;

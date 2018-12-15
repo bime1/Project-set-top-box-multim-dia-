@@ -156,7 +156,13 @@ int main(int argc, const char* argv[])
 
     cout << "Suppression des élèments" << endl;
 
+    /*
+     *Supprimer le shared pointer
+     * Problème des destructeurs
+    */
     ImageSmart.reset();
+
+
 
     cout << "Après suppression :" << endl;
     groupeSmart->show(cout);

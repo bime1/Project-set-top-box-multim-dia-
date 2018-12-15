@@ -36,7 +36,7 @@ public:
         return nameListe;
     }
 
-    virtual ~Groupe(){
+     ~Groupe(){
         delete liste;
     }
     void show(ostream & s) const
