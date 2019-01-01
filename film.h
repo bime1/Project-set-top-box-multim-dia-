@@ -9,7 +9,7 @@ private:
     int nombreChapitres;
     int *tableau;
 public:
-    Film(){
+    Film(double _duree, string _path, string _namefile): Video(_duree, _path, _namefile){
         nombreChapitres = 0;
         tableau = nullptr;
     }
