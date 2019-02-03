@@ -13,12 +13,49 @@
 #include "groupe.h"
 #include "film.h"
 #include <memory>
+#include "tcpserver.h"
+#include "table.h"
 
 using PtrSmart = std::shared_ptr<multimedia>;
 using namespace std;
+using namespace cppu;
+
+
+const int PORT = 3331;
+
 
 int main(int argc, const char* argv[])
 {
+    shared_ptr<TCPServer> server(new TCPServer());
+
+
+    shared_ptr<table> table_client(new table());
+
+
+    shared_ptr<Video> video = table_client->createVideo(30, "media/my_vid.wma", "video");
+    shared_ptr<Photo> photo = table_client->createPhoto(32, 98, "media/my_img.png", "photo");
+    shared_ptr<Groupe> groupe = table_client->createGroupe("group");
+
+    groupe->push_back(video);
+    groupe->push_back(photo);
+
+    server->setCallback(*table_client, &table::processRequest);
+
+    cout << "Démarage du sérveur avec le port " << PORT << endl;
+    int status = server->run(PORT);
+
+    if (status < 0) {
+      cerr << "Le serveur ne peut pas démarrer " << PORT << endl;
+      return 1;
+    }
+
+
+
+
+
+
+#ifdef OLD_VERSION
+
     /* test avant de rendre multimedia abstraite */
 
 
@@ -72,6 +109,7 @@ int main(int argc, const char* argv[])
      * Les objets qui y sont ne seront pas supprimé.
     */
 
+    /*
     Groupe * groupe_1 = new Groupe("groupe_test_1");
     shared_ptr<Photo> photo_1(new Photo(15, 17, "/Desktop", "image_test"));
     shared_ptr<Video> video_1(new Video(17, "Desktop", "video_test"));
@@ -88,7 +126,8 @@ int main(int argc, const char* argv[])
     photo_1.reset();
     cout << "Affichage du second groupe " << endl ;
     groupe_2->show(cout);
-
+    */
+#endif
 
 
     return 0;

@@ -9,8 +9,10 @@
 #include "video.h"
 #include "film.h"
 #include <iostream>
+#include "tcpserver.h"
 
 using namespace std;
+using namespace cppu;
 
 
 class table
@@ -35,6 +37,7 @@ public:
 
     void show(string name, ostream& s);
     void jouer(string name, ostream& s);
+    bool processRequest(TCPConnection& cnx, const string& request, string& response);
 };
 
 #endif // TABLE_H

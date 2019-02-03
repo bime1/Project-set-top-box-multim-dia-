@@ -14,7 +14,7 @@ PROG = myprog
 #
 # Fichiers sources (NE PAS METTRE les .h ni les .o seulement les .cpp)
 #
-SOURCES = multimedia.cpp main.cpp
+SOURCES = multimedia.cpp main.cpp tcpserver.cpp cppsocket.cpp table.cpp
 
 #
 # Fichiers objets (ne pas modifier sauf si l'extension n'est pas .cpp)
@@ -37,7 +37,7 @@ CXXFLAGS = -std=c++11 -Wall -g
 #
 # Options de l'editeur de liens
 #
-LDFLAGS = 
+LDFLAGS =-lpthread 
 
 #
 # Librairies a utiliser

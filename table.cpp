@@ -1,5 +1,8 @@
 #include "table.h"
 #include <string>
+#include "tcpserver.h"
+#include "ostream"
+
 table::table()
 {
 
@@ -69,4 +72,66 @@ void table::jouer(string name, ostream& s){
     }
     else
         it->jouer();
+}
+
+
+
+
+bool table::processRequest(TCPConnection& cnx, const string& request, string& response) {
+
+    cerr << "\nDemande: '" << request << "'" << endl;
+
+    stringstream stream;
+    stringstream response_stream;
+
+    stream << request;
+
+    string operation;
+    string target;
+
+    stream >> operation >> target;
+
+    TCPLock lock(cnx);
+
+    if(operation == "Recherche") {
+        shared_ptr<multimedia> result = findMultimedia(target);
+        if(result == nullptr) {
+            response = "Aucun multimedia trouvé de ce nom : " + target + "||";
+        }
+        else {
+            result->show(response_stream);
+            response = response_stream.str();
+        }
+    }
+    else if(operation == "Recherche Groupe") {
+        shared_ptr<Groupe> result = finGroupe(target);
+        if(result == nullptr) {
+            response = "Aucun groupe trouvé avec ce nom : " + target + "||";
+        }
+        else {
+            result->show(response_stream);
+            response = response_stream.str();
+        }
+    }
+    else if(operation == "Jouer") {
+        shared_ptr<multimedia> result = findMultimedia(target);
+        if(result == nullptr) {
+            response = "Aucune multimédia avec ce nom " + target + "||";
+        }
+        else {
+            result->jouer();
+            response = "Execution " + target + " sur le serveur ! ||";
+        }
+    }
+    else if(operation == "Quitter") {
+        response = "By !";
+        return false;
+    }
+    else {
+        response = "Entrer une nouvelle requet";
+    }
+    cerr << "reponse: " << response << endl;
+
+
+    return true;
 }
