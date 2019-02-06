@@ -1,0 +1,4 @@
+Commencer par lancer le serveur : Dans le dossier cpp, lancer : make run
+
+Puis lancer le client swing : Dans le dossier swing, lancer : make run
+
